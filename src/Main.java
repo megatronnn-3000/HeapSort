@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 class Heapify{
 
-    void Method(int arr[],int n,int i){
+    void heapify(int arr[],int n,int i){
 
           int largest = i;
 
@@ -21,7 +21,7 @@ class Heapify{
             int temp = arr[i];
             arr[i]  = arr[largest];
             arr[largest] = temp;
-            Method(arr,n,largest);
+            heapify(arr,n,largest);
         }
 
 
@@ -40,7 +40,7 @@ class Sort {
 
 
         for (int i = n / 2 - 1; i >= 0; i--) {
-            h.Method(arr, n, i);
+            h.heapify(arr, n, i);
         }
 
         for (int i = n - 1; i > 0; i--) {
@@ -49,7 +49,7 @@ class Sort {
             arr[0]  = arr[i];
             arr[i] = temp;
 
-            h.Method(arr,i,0);
+            h.heapify(arr,i,0);
 
         }
     }
